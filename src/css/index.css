@@ -1,13 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 
-body, html {
+body,
+html {
 	font-family: 'Montserrat', sans-serif;
 	height: 100%;
-  	margin: 0;
+	margin: 0;
 }
 
 header {
-	background-image: url(https://cdn.discordapp.com/attachments/699558386391318557/699583924770439188/parking.jpg);
+	background-image: url(../assets/parkingbackground.jpg);
 	height: 100%;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -34,7 +35,39 @@ form {
 	align-items: self-start;
 	justify-content: space-around;
 	height: 150px;
+}
 
+.container {
+	max-width: 1300px;
+	margin: 0 auto;
+}
+
+.main-titles {
+	text-align: center;
+	text-transform: uppercase;
+	padding: 30px;
+}
+
+#info {
+	display: flex;
+	flex-wrap: nowrap;
+	margin: 30px auto;
+}
+
+#info h3 {
+	text-align: center;
+}
+
+#info img {
+	display: block;
+	margin: 0 auto;
+	max-width: 200px;
+}
+
+#uno,
+#dos,
+#tres {
+	margin: 10px 20px;
 }
 
 footer ul {

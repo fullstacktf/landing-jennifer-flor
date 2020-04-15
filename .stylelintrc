@@ -10,6 +10,7 @@
 			}
 		],
 		"block-no-empty": null,
+		"indentation": "tab",
 		"unit-whitelist": [
 			"em",
 			"rem",
