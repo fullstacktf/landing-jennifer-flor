@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 
+:root {
+	--color-primary: #b73324;
+	--color-secondary: #e9a246;
+	--color-dark: #202029;
+}
+
 body,
 html {
 	height: 100%;
@@ -7,7 +13,8 @@ html {
 }
 
 body,
-html, input {
+html,
+input {
 	font-family: 'Montserrat', sans-serif;
 }
 
@@ -23,8 +30,8 @@ header {
 	color: white; */
 
 	display: flex;
-    justify-content: space-between;
-    height: 100%;
+	justify-content: space-between;
+	height: 100%;
 }
 
 .left {
@@ -32,7 +39,7 @@ header {
 	background-image: url(../assets/garage-door.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
-    background-position: center;
+	background-position: center;
 }
 
 #logo {
@@ -40,10 +47,11 @@ header {
 }
 
 .right {
-    flex-basis: 50%;
-    display: flex;
-    flex-direction: column;
-    /* justify-content: center;
+	flex-basis: 50%;
+	display: flex;
+	flex-direction: column;
+
+	/* justify-content: center;
     align-items: center; */
 }
 
@@ -67,17 +75,18 @@ form {
 	margin-top: 10rem;
 }
 
-input[type="text"] {
+input[type='text'] {
 	width: 300px;
 	padding-left: 5px;
 }
 
-input[type="button"] {
+input[type='button'] {
 	background: white;
-    border: solid 2px black;
-    padding: 0 15px;
+	border: solid 2px black;
+	padding: 0 15px;
 	box-shadow: 5px 5px 5px black;
 	font-size: 1rem;
+	cursor: pointer;
 }
 
 .container {
@@ -88,7 +97,7 @@ input[type="button"] {
 .main-titles {
 	text-align: center;
 	text-transform: uppercase;
-	padding: 30px;
+	font-size: 36px;
 }
 
 #info {
@@ -107,10 +116,32 @@ input[type="button"] {
 	max-width: 200px;
 }
 
-#uno,
-#dos,
-#tres {
+.step-one,
+.step-two,
+.step-three {
 	margin: 10px 20px;
+}
+
+.cta-bottom {
+	background-color: var(--color-secondary);
+	padding: 0 0 20px;
+}
+
+.cta-bottom > .container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.button-cta {
+	background: var(--color-primary);
+	border: 0;
+	padding: 20px;
+	font-weight: 800;
+	font-size: 16px;
+	color: white;
+	font-family: Montserrat, sans-serif;
+	cursor: pointer;
 }
 
 footer ul {
