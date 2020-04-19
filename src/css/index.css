@@ -83,13 +83,11 @@ input[type='button'] {
 	cursor: pointer;
 }
 
-.container {
-	max-width: 1300px;
-	margin: 0 auto;
+main {
+	font-family: 'Montserrat', sans-serif;
 }
 
 .main-titles {
-	text-align: center;
 	text-transform: uppercase;
 	font-size: 36px;
 	font-weight: bold;
@@ -102,11 +100,6 @@ input[type='button'] {
 	margin: 10px 20px;
 }
 
-.about-us {
-	background-color: #fff6d5;
-	padding: 0 0 100px;
-}
-
 .separation img {
 	display: block;
 	position: relative;
@@ -115,6 +108,90 @@ input[type='button'] {
 	height: 250px;
 	width: 100%;
 	margin: 0;
+}
+
+.about-us {
+	background-color: #fff6d5;
+	padding: 0 50px 100px;
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+}
+
+.clients-reviews {
+	flex-basis: 30%;
+	border-width: 0 1px 1px 0;
+	border-color: var(--color-secondary);
+	border-style: solid;
+	padding: 20px;
+	position: relative;
+}
+
+.clients-reviews::before {
+	content: '';
+	position: absolute;
+	top: 2.4em;
+	right: 0;
+	height: 4em;
+	width: 15em;
+	z-index: 0;
+	background-color: var(--color-secondary);
+}
+
+.clients-reviews h2 {
+	font-size: 28px;
+	text-transform: uppercase;
+	text-align: right;
+	position: relative;
+}
+
+.clients-reviews img {
+	display: block;
+	position: relative;
+	z-index: 1;
+	margin: 20px auto;
+	width: 150px;
+	border-radius: 50%;
+	border: 10px solid #fff;
+}
+
+.clients-reviews .client-name {
+	font-size: 24px;
+	font-weight: bold;
+	text-transform: uppercase;
+	text-align: center;
+	margin: 10px 0;
+}
+
+.brand {
+	width: 320px;
+	position: absolute;
+	left: calc(50% - 160px);
+	padding: 20px;
+	box-sizing: border-box;
+	background: var(--color-secondary);
+	text-align: center;
+}
+
+.brand p {
+	padding: 20px;
+	border-width: 0 1px 1px 0;
+	border-color: #fff6d5;
+	border-style: solid;
+	font-size: 20px;
+}
+
+.brand h2 {
+	border-width: 1px 0 0 1px;
+	border-color: #fff6d5;
+	border-style: solid;
+	font-size: 46px;
+}
+
+.description {
+	flex-basis: 30%;
+	text-align: right;
+	font-size: 20px;
 }
 
 .cta-bottom {
@@ -142,12 +219,13 @@ input[type='button'] {
 
 .cta-bottom h2 {
 	line-height: 1.5em;
+	text-align: center;
 }
 
 .cta-bottom h3 {
 	font-size: 20px;
-	padding: 0 0 20px;
-	color: var(--color-secondary);
+	padding: 10px 0 30px;
+	color: #fff6d5;
 }
 
 .cta-bottom > .container {
@@ -157,6 +235,7 @@ input[type='button'] {
 	align-items: center;
 	position: relative;
 	z-index: 2;
+	margin: 0 auto;
 }
 
 .button-cta {
@@ -166,14 +245,36 @@ input[type='button'] {
 	font-weight: 400;
 	font-size: 16px;
 	color: white;
-	font-family: Montserrat, sans-serif;
 	cursor: pointer;
 }
 
-#info > .container {
+#info {
+	min-height: 600px;
+	display: flex;
+	align-items: center;
+}
+
+#info .main-titles {
+	flex-basis: 30%;
+	position: relative;
+	padding: 0 0 0 50px;
+}
+
+#info .main-titles::before {
+	content: '';
+	position: absolute;
+	top: 0.7em;
+	left: 0;
+	height: 6em;
+	width: 10em;
+	z-index: -1;
+	background-color: var(--color-secondary);
+}
+
+#info .how-to {
 	display: flex;
 	flex-wrap: nowrap;
-	margin: 30px auto;
+	flex-basis: 70%;
 }
 
 #info h3 {
@@ -203,4 +304,56 @@ footer a {
 footer ul {
 	display: flex;
 	justify-content: center;
+}
+
+@media screen and (max-width: 1200px) {
+	.about-us {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.clients-reviews {
+		margin: 40px 0;
+	}
+
+	.brand {
+		position: static;
+	}
+
+	.description {
+		margin: 20px 0;
+	}
+
+	#info .how-to {
+		flex-direction: column;
+	}
+}
+
+@media screen and (max-width: 1046px) {
+	#info .how-to {
+		flex-basis: 50%;
+	}
+
+	#info .main-titles {
+		flex-basis: 50%;
+	}
+}
+
+@media screen and (max-width: 840px) {
+	#info {
+		flex-direction: column;
+	}
+
+	#info .how-to {
+		flex-basis: 100%;
+	}
+
+	#info .main-titles {
+		flex-basis: 100%;
+		margin: 40px 0 20px;
+	}
+
+	#info .main-titles::before {
+		height: 3em;
+	}
 }
