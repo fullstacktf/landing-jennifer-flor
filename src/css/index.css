@@ -91,7 +91,6 @@ main {
 	text-transform: uppercase;
 	font-size: 36px;
 	font-weight: bold;
-	padding: 20px;
 }
 
 .step-one,
@@ -112,86 +111,71 @@ main {
 
 .about-us {
 	background-color: #fff6d5;
-	padding: 0 50px 100px;
-	position: relative;
+	padding: 0 0 100px;
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-around;
+	overflow: hidden;
 }
 
 .clients-reviews {
-	flex-basis: 30%;
-	border-width: 0 1px 1px 0;
-	border-color: var(--color-secondary);
-	border-style: solid;
-	padding: 20px;
-	position: relative;
-}
-
-.clients-reviews::before {
-	content: '';
-	position: absolute;
-	top: 2.4em;
-	right: 0;
-	height: 4em;
-	width: 15em;
-	z-index: 0;
-	background-color: var(--color-secondary);
-}
-
-.clients-reviews h2 {
-	font-size: 28px;
-	text-transform: uppercase;
-	text-align: right;
 	position: relative;
 }
 
 .clients-reviews img {
 	display: block;
-	position: relative;
-	z-index: 1;
-	margin: 20px auto;
-	width: 150px;
-	border-radius: 50%;
-	border: 10px solid #fff;
+	max-width: 500px;
 }
 
-.clients-reviews .client-name {
-	font-size: 24px;
+.clients-reviews .review {
+	position: absolute;
+	top: 60%;
+	right: -10%;
+	background: var(--color-secondary);
+	padding: 20px;
+	font-size: 18px;
+}
+
+.client-name {
+	font-size: 22px;
+	display: inline-block;
 	font-weight: bold;
 	text-transform: uppercase;
-	text-align: center;
-	margin: 10px 0;
-}
-
-.brand {
-	width: 320px;
 	position: absolute;
-	left: calc(50% - 160px);
-	padding: 20px;
-	box-sizing: border-box;
-	background: var(--color-secondary);
-	text-align: center;
+	right: 0.5em;
+	bottom: 0.5em;
+	color: var(--color-primary);
 }
 
-.brand p {
-	padding: 20px;
-	border-width: 0 1px 1px 0;
-	border-color: #fff6d5;
-	border-style: solid;
-	font-size: 20px;
-}
-
-.brand h2 {
-	border-width: 1px 0 0 1px;
-	border-color: #fff6d5;
-	border-style: solid;
-	font-size: 46px;
-}
-
-.description {
-	flex-basis: 30%;
+.brand-info {
 	text-align: right;
 	font-size: 20px;
+	flex-basis: 40%;
+}
+
+.brand-info p {
+	position: relative;
+	z-index: 1;
+}
+
+.brand-info .main-titles {
+	margin: 0 0 20px;
+	position: relative;
+	z-index: 1;
+}
+
+.brand-info .main-titles::before {
+	content: '';
+	position: absolute;
+	top: 0.7em;
+	right: -20%;
+	height: 2em;
+	width: 10em;
+	z-index: -2;
+	background-color: var(--color-secondary);
+}
+
+.brand-info .description {
+	margin: 20px 0;
 }
 
 .cta-bottom {
@@ -226,6 +210,7 @@ main {
 	font-size: 20px;
 	padding: 10px 0 30px;
 	color: #fff6d5;
+	font-weight: lighter;
 }
 
 .cta-bottom > .container {
@@ -291,10 +276,7 @@ main {
 }
 
 footer {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	height: 400px;
+	height: 300px;
 }
 
 footer a {
@@ -306,24 +288,18 @@ footer ul {
 	justify-content: center;
 }
 
+.footer-info {
+	height: 200px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.copyright h3 {
+	font-size: 30px;
+}
+
 @media screen and (max-width: 1200px) {
-	.about-us {
-		flex-direction: column;
-		align-items: center;
-	}
-
-	.clients-reviews {
-		margin: 40px 0;
-	}
-
-	.brand {
-		position: static;
-	}
-
-	.description {
-		margin: 20px 0;
-	}
-
 	#info .how-to {
 		flex-direction: column;
 	}
@@ -336,6 +312,16 @@ footer ul {
 
 	#info .main-titles {
 		flex-basis: 50%;
+	}
+
+	.about-us {
+		flex-direction: column-reverse;
+		align-items: center;
+		padding: 0 20px 100px;
+	}
+
+	.clients-reviews {
+		margin-top: 40px;
 	}
 }
 
