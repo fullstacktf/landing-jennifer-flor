@@ -1,0 +1,158 @@
+.right-container {
+	position: relative;
+	width: 400px;
+	height: 400px;
+	box-shadow: 
+		5px 15px 20px 0px rgba(0, 0, 0, 0.50);
+	border-radius: 5px;
+    overflow: hidden;
+}
+
+form {
+    width: 400px;
+	height: 150px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+input {
+	margin: 5px;
+}
+
+.right-form, .options-container, .option-panel {
+	position: absolute;
+}
+
+.right-form {
+	transition: all 0.6s ease-in-out;
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 200px;
+    width: 400px;
+}
+
+.sign-in-container {
+	z-index: 2;
+}
+
+.sign-up-container {
+	opacity: 0;
+	z-index: 1;
+}
+
+.right-container.right-panel-active .sign-in-container {
+    transform: translateY(200px);
+    opacity: 0;
+}
+
+.right-container.right-panel-active .sign-up-container {
+	transform: translateY(200px);
+	opacity: 1;
+	z-index: 3;
+	animation: show 0.6s;
+}
+
+@keyframes show {
+	0%, 49.99% {
+        opacity: 0;
+        z-index: 1;
+    }
+    50%, 100% {
+        opacity: 1;
+        z-index: 3;
+    }
+}
+
+.options-container {
+	top: 200px;
+	transition: transform 0.6s ease-in-out;
+}
+
+.right-container.right-panel-active .options-container {
+	transform: translateY(-200px);
+	transition: transform 0.6s ease-in-out;
+}
+
+.right-container.right-panel-active .options-container {
+    transform: translateY(-200px);
+}
+
+.options {
+	width: 400px;
+	height: 200px;
+	background: #202029;
+	background: linear-gradient(to top, #b73324, #e9a246);
+	transform: translateY(0);
+	transition: transform 0.6s ease-in-out;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.right-container.right-panel-active .options {
+    transform: translateY(0);
+}
+
+.option-panel {
+	height: 100px;
+	display: flex;
+	flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+	transition: transform 0.6s ease-in-out;
+}
+
+.option-up {
+	opacity: 0;
+}
+
+.right-container.right-panel-active .option-up {
+	opacity: 1;
+	z-index: 2;
+}
+
+.right-container.right-panel-active .option-down {
+	opacity: 0;
+	z-index: 1;
+}
+
+input[type='text'], [type='password'] {
+	padding-left: 5px;
+}
+
+input[type='button'] {	
+	background: white;
+	border: solid 1px #202029;
+	font-size: 1rem;
+	padding: 5px 15px;
+	cursor: pointer;
+	color: #202029;
+}
+
+#signIn, #signUp {
+	background: none;
+	border: solid 1px #202029;
+	padding: 5px 15px;
+	font-size: 1rem;
+	color: #202029;
+	cursor: pointer;
+}
+
+.right span {
+	font-size: 12px;
+	color: #333;
+	margin: 5px;
+}
+
+.right a {
+	text-decoration: none;
+	color: #333;
+}
+
+.right h1 {
+	color: #202029;
+	font-size: 24px;
+}
