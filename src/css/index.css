@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 
 :root {
-	--color-primary: #b73324;
-	--color-secondary: #e9a246;
-	--color-dark: #202029;
+	--color-primary: #d93829;
+	--color-secondary: #d9ac84;
+	--color-light: #f2efdf;
+	--color-dark: #593c44;
 }
 
 body,
@@ -88,7 +89,7 @@ li {
 }
 
 .about-us {
-	background-color: #fff6d5;
+	background-color: var(--color-light);
 	padding: 0 0 100px;
 	display: flex;
 	justify-content: space-around;
@@ -170,7 +171,7 @@ li {
 	background-position: center center;
 	background-size: cover;
 	background-attachment: fixed;
-	opacity: 0.2;
+	opacity: 0.4;
 	top: 0;
 	left: 0;
 	bottom: 0;
@@ -255,10 +256,12 @@ li {
 
 footer {
 	height: 300px;
+	background: #a62c21;
+	color: var(--color-light);
 }
 
 footer a {
-	color: var(--color-primary);
+	color: var(--color-secondary);
 }
 
 footer ul {
