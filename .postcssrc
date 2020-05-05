@@ -1,0 +1,8 @@
+{
+	"plugins": {
+		"postcss-nested": true,
+		"autoprefixer": true,
+		"postcss-clean": true,
+		"stylelint": true,
+	}
+}
