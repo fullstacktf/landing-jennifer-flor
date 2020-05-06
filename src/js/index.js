@@ -8,3 +8,19 @@ new Typed(locations, {
 	loop: true,
 	backDelay: 2e3,
 });
+
+const reviewClients = Array.from(document.querySelectorAll('.review'));
+const allButtons = Array.from(document.querySelectorAll('.reviews-control > .button'));
+
+allButtons.forEach((item) => {
+	item.addEventListener('click', nextReview);
+});
+
+function nextReview(ev) {
+	allButtons.forEach((item, index) => {
+		item.className = 'button';
+		reviewClients[index].className = 'review';
+	});
+	ev.target.className = 'button selected';
+	reviewClients[ev.target.id].className = 'review active';
+}
