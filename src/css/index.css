@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:wght@200;400;900&display=swap');
 
 :root {
 	--color-primary: #b32a1d;
-	--color-secondary: #ffb04d;
+	--color-secondary: #f1a132;
 	--color-light: #ffedbe;
 	--color-dark: #593c44;
 }
@@ -14,7 +14,7 @@ button {
 
 li {
 	list-style: none;
-	margin-right: 10px;
+	margin-right: 20px;
 }
 
 a {
@@ -40,7 +40,7 @@ a {
 .header-content {
 	display: flex;
 	justify-content: space-between;
-	height: calc(100vh - 60px);
+	height: calc(100vh - 70px);
 }
 
 .left {
@@ -50,15 +50,15 @@ a {
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
-	border-bottom-right-radius: 50%;
+	border-bottom-right-radius: 40%;
 }
 
 #logo {
 	padding: 5px 10px;
 
 	h1 {
-		border: solid 1px #202029;
-		width: min-content;
+		font-size: 24px;
+		font-weight: 900;
 		padding: 5px;
 	}
 }
@@ -66,8 +66,53 @@ a {
 .right {
 	flex-basis: 50%;
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+
+	.description {
+		max-width: 400px;
+		align-self: center;
+		text-align: center;
+
+		h3 {
+			color: var(--color-dark);
+			font-size: 32px;
+			text-transform: uppercase;
+			font-weight: 900;
+			line-height: 38px;
+			padding: 10px 0 20px;
+		}
+
+		.subtitle {
+			font-size: 20px;
+
+			#locations {
+				font-size: 26px;
+				color: var(--color-secondary);
+			}
+		}
+	}
+
+	p {
+		font-size: 16px;
+		margin: 10px 0;
+		font-weight: 200;
+		text-transform: uppercase;
+	}
+
+	.cta-header {
+		padding: 20px;
+		text-align: center;
+		width: 80%;
+		margin: 40px 0;
+		max-width: 400px;
+
+		p {
+			color: #8b8b8b;
+			padding: 10px 0 0;
+		}
+	}
 }
 
 .navbar {
@@ -109,10 +154,10 @@ a {
 		display: flex;
 		flex-wrap: nowrap;
 		flex-basis: 70%;
+		text-align: center;
 	}
 
 	h3 {
-		text-align: center;
 		font-size: 18px;
 		font-weight: bold;
 		padding: 20px 0;
@@ -121,22 +166,30 @@ a {
 	img {
 		display: block;
 		margin: 0 auto;
-		max-width: 200px;
+		max-width: 150px;
 	}
 }
 
 .step-one,
 .step-two,
 .step-three {
-	margin: 10px 20px;
+	margin: 5px 5px;
+	padding: 18px;
+	border: 1px solid #ccc;
+	border-top: 3px solid var(--color-secondary);
+	transition: all 0.3s ease-in-out;
+
+	&:hover {
+		box-shadow: 0 5px 30px -5px #aaa;
+	}
 }
 
 .separation img {
 	display: block;
 	position: relative;
 	z-index: -1;
-	top: 100px;
-	height: 250px;
+	top: 80px;
+	height: 150px;
 	width: 100%;
 	margin: 0;
 }
@@ -260,7 +313,7 @@ a {
 	border: 2px solid #751d13;
 	padding: 20px;
 	font-weight: 400;
-	font-size: 16px;
+	font-size: 18px;
 	color: white;
 	cursor: pointer;
 

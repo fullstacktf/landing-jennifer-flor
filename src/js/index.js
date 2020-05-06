@@ -1,11 +1,10 @@
-const SIGNUP_BUTTON = document.getElementById('signUp');
-const SIGNIN_BUTTON = document.getElementById('signIn');
-const RIGHT = document.getElementById('right');
+import Typed from 'typed.js';
 
-SIGNUP_BUTTON.addEventListener('click', () => {
-    RIGHT.classList.add('right-panel-active');
-});
+const locations = document.querySelector('#locations');
 
-SIGNIN_BUTTON.addEventListener('click', () => {
-    RIGHT.classList.remove('right-panel-active');
+new Typed(locations, {
+	strings: ['Santa Cruz de Tenerife', 'La Laguna', 'Adeje', 'Los Cristianos', 'El Puerto de la Cruz', 'Las Américas', 'La Orotava', 'Tegueste', 'Icod de los Vinos'],
+	typeSpeed: 60,
+	loop: true,
+	backDelay: 2e3,
 });
