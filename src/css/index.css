@@ -53,6 +53,7 @@ li {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	width: 50%;
 
 	.description {
 		max-width: 400px;
@@ -114,11 +115,10 @@ li {
 		&:before {
 			content: '';
 			position: absolute;
-			/* top: 0.7em; */
+			top: 0.7em;
 			left: 0;
-			/* height: 6em; */
-			height: 4em;
-			width: 10em;
+			height: 2em;
+			width: 5em;
 			z-index: -1;
 			background-color: var(--color-secondary);
 		}
@@ -126,6 +126,8 @@ li {
 
 	.how-to {
 		text-align: center;
+		max-width: 1200px;
+		margin: 0 auto;
 	}
 
 	h3 {
@@ -144,7 +146,7 @@ li {
 .step-one,
 .step-two,
 .step-three {
-	margin: 20px;
+	margin: 20px 10px;
 	padding: 20px;
 	border: 1px solid #ccc;
 	border-top: 3px solid var(--color-secondary);
@@ -154,7 +156,6 @@ li {
 		box-shadow: 0 5px 30px -5px #aaa;
 	}
 }
-
 
 .clients-reviews {
 	position: relative;
@@ -254,6 +255,14 @@ li {
 	}
 }
 
+.about-us {
+	background-color: var(--color-light);
+	padding: 0 0 100px;
+	display: flex;
+	justify-content: space-around;
+	overflow: hidden;
+}
+
 .separation img {
 	display: block;
 	position: relative;
@@ -350,8 +359,6 @@ li {
 	font-size: 30px;
 }
 
-/* Mobile (landscape orientation)
-Tablet */
 @media screen and (min-width: 640px) and (orientation: landscape) {
 	.header-content {
 		display: flex;
@@ -373,9 +380,10 @@ Tablet */
 	}
 }
 
-@media screen and (min-width: 640px) {
+@media screen and (min-width: 700px) {
 	.info .main-titles {
-		padding: 0 0 50px 50px;
+		padding: 0 0 20px 20px;
+		margin: 50px 0;
 	}
 
 	.how-to {
@@ -384,7 +392,22 @@ Tablet */
 	}
 }
 
-/* Desktop */
+@media screen and (max-width: 1046px) {
+	.about-us {
+		flex-direction: column-reverse;
+		align-items: center;
+		padding: 0 20px 100px;
+	}
+
+	.clients-reviews .review-text {
+		right: 0;
+	}
+
+	.clients-reviews {
+		margin-top: 40px;
+	}
+}
+
 @media screen and (min-width: 1200px) {
 	.menu-logo {
 		display: none;
@@ -393,10 +416,5 @@ Tablet */
 	.navbar ul {
 		display: flex;
 		justify-content: flex-end;
-	}
-
-	.info {
-		display: flex;
-		align-items: center;
 	}
 }
