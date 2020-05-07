@@ -48,17 +48,30 @@ li {
 	height: calc(100vh - 70px);
 }
 
+.left {
+	background-image: url(../assets/garage-door.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	border-bottom-right-radius: 40%;
+	position: absolute;
+	z-index: 1;
+	height: calc(100% - 70px);
+}
+
 .right {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	align-items: center;
-	width: 50%;
+	align-items: flex-end;
+	position: relative;
+	z-index: 3;
+	flex: 0 0 100%;
 
 	.description {
 		max-width: 400px;
-		align-self: center;
 		text-align: center;
+		margin: 0 50px;
 
 		h3 {
 			color: var(--color-dark);
@@ -76,7 +89,7 @@ li {
 		#locations,
 		.locations {
 			font-size: 26px;
-			color: var(--color-secondary);
+			color: var(--color-primary);
 		}
 	}
 
@@ -90,12 +103,11 @@ li {
 	.cta-header {
 		padding: 20px;
 		text-align: center;
-		width: 80%;
-		margin: 40px 0;
+		margin: 40px 25px;
 		max-width: 400px;
 
 		p {
-			color: #8b8b8b;
+			color: #696969;
 			padding: 10px 0 0;
 		}
 	}
@@ -359,20 +371,14 @@ li {
 	font-size: 30px;
 }
 
-@media screen and (min-width: 640px) and (orientation: landscape) {
+@media screen and (min-width: 640px) {
 	.header-content {
-		display: flex;
-		justify-content: space-between;
+		height: 100%;
 	}
 
 	.left {
-		flex-basis: 50%;
-		overflow: hidden;
-		background-image: url(../assets/garage-door.jpg);
-		background-repeat: no-repeat;
-		background-size: cover;
-		background-position: center;
-		border-bottom-right-radius: 40%;
+		width: 50%;
+		height: calc(100% + 70px);
 	}
 
 	.footer-info {
@@ -405,6 +411,15 @@ li {
 
 	.clients-reviews {
 		margin-top: 40px;
+	}
+
+	.left {
+		width: 100%;
+		opacity: 0.3;
+	}
+
+	.right {
+		align-items: center;
 	}
 }
 
