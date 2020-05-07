@@ -12,11 +12,6 @@ button {
 	font-family: 'Montserrat', sans-serif;
 }
 
-li {
-	list-style: none;
-	margin-right: 20px;
-}
-
 a {
 	color: var(--color-primary);
 	text-decoration: none;
@@ -26,45 +21,34 @@ a {
 	}
 }
 
-.container {
-	max-width: 1300px;
-	margin: 0 auto;
-}
-
-.main-titles {
-	text-transform: uppercase;
-	font-size: 36px;
-	font-weight: bold;
-}
-
-.header-content {
+.navbar {
 	display: flex;
 	justify-content: space-between;
-	height: calc(100vh - 70px);
-}
+	align-items: center;
+	padding: 20px 30px;
+	border-bottom: 2px solid rgba(0, 0, 0, 0.3);
 
-.left {
-	flex-basis: 50%;
-	overflow: hidden;
-	background-image: url(../assets/garage-door.jpg);
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center;
-	border-bottom-right-radius: 40%;
-}
-
-#logo {
-	padding: 5px 10px;
-
-	h1 {
-		font-size: 24px;
-		font-weight: 900;
-		padding: 5px;
+	ul {
+		display: none;
 	}
 }
 
+li {
+	margin-right: 20px;
+}
+
+#logo {
+	h1 {
+		font-size: 24px;
+		font-weight: 900;
+	}
+}
+
+.header-content {
+	height: calc(100vh - 70px);
+}
+
 .right {
-	flex-basis: 50%;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -116,35 +100,24 @@ a {
 	}
 }
 
-.navbar {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 10px 50px;
-	border-bottom: 2px solid rgba(0, 0, 0, 0.3);
-
-	ul {
-		display: flex;
-		justify-content: flex-end;
-	}
+.main-titles {
+	text-transform: uppercase;
+	font-size: 36px;
+	font-weight: bold;
 }
 
 .info {
-	min-height: 600px;
-	display: flex;
-	align-items: center;
-
 	.main-titles {
-		flex-basis: 30%;
 		position: relative;
-		padding: 0 0 0 50px;
+		padding-left: 50px;
 
 		&:before {
 			content: '';
 			position: absolute;
-			top: 0.7em;
+			/* top: 0.7em; */
 			left: 0;
-			height: 6em;
+			/* height: 6em; */
+			height: 4em;
 			width: 10em;
 			z-index: -1;
 			background-color: var(--color-secondary);
@@ -152,9 +125,6 @@ a {
 	}
 
 	.how-to {
-		display: flex;
-		flex-wrap: nowrap;
-		flex-basis: 70%;
 		text-align: center;
 	}
 
@@ -167,15 +137,15 @@ a {
 	img {
 		display: block;
 		margin: 0 auto;
-		max-width: 150px;
+		max-width: 100px;
 	}
 }
 
 .step-one,
 .step-two,
 .step-three {
-	margin: 5px 5px;
-	padding: 18px;
+	margin: 20px;
+	padding: 20px;
 	border: 1px solid #ccc;
 	border-top: 3px solid var(--color-secondary);
 	transition: all 0.3s ease-in-out;
@@ -185,23 +155,6 @@ a {
 	}
 }
 
-.separation img {
-	display: block;
-	position: relative;
-	z-index: -1;
-	top: 80px;
-	height: 150px;
-	width: 100%;
-	margin: 0;
-}
-
-.about-us {
-	background-color: var(--color-light);
-	padding: 0 0 100px;
-	display: flex;
-	justify-content: space-around;
-	overflow: hidden;
-}
 
 .clients-reviews {
 	position: relative;
@@ -301,6 +254,16 @@ a {
 	}
 }
 
+.separation img {
+	display: block;
+	position: relative;
+	top: 80px;
+	z-index: -1;
+	height: 150px;
+	width: 100%;
+	margin: 0;
+}
+
 .cta-bottom {
 	background-color: var(--color-dark);
 	padding: 100px 0;
@@ -330,14 +293,14 @@ a {
 
 	h3 {
 		font-size: 20px;
-		padding: 10px 0 30px;
+		padding: 30px;
 		color: #fff6d5;
 		font-weight: lighter;
+		text-align: center;
 	}
 }
 
 .cta-bottom > .container {
-	max-width: 600px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -364,17 +327,21 @@ a {
 .footer {
 	height: 300px;
 	background: #ececec;
-	color: black;
 
 	ul {
 		display: flex;
 		justify-content: center;
+	}
+
+	p {
+		text-align: center;
 	}
 }
 
 .footer-info {
 	height: 200px;
 	display: flex;
+	flex-direction: column;
 	justify-content: space-around;
 	align-items: center;
 }
@@ -383,47 +350,53 @@ a {
 	font-size: 30px;
 }
 
-@media screen and (max-width: 1200px) {
-	.info .how-to {
-		flex-direction: column;
+/* Mobile (landscape orientation)
+Tablet */
+@media screen and (min-width: 640px) and (orientation: landscape) {
+	.header-content {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.left {
+		flex-basis: 50%;
+		overflow: hidden;
+		background-image: url(../assets/garage-door.jpg);
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+		border-bottom-right-radius: 40%;
+	}
+
+	.footer-info {
+		flex-direction: row;
 	}
 }
 
-@media screen and (max-width: 1046px) {
-	.info .how-to {
-		flex-basis: 50%;
-	}
-
+@media screen and (min-width: 640px) {
 	.info .main-titles {
-		flex-basis: 50%;
+		padding: 0 0 50px 50px;
 	}
 
-	.about-us {
-		flex-direction: column-reverse;
-		align-items: center;
-		padding: 0 20px 100px;
-	}
-
-	.clients-reviews {
-		margin-top: 40px;
+	.how-to {
+		display: flex;
+		flex-wrap: nowrap;
 	}
 }
 
-@media screen and (max-width: 840px) {
+/* Desktop */
+@media screen and (min-width: 1200px) {
+	.menu-logo {
+		display: none;
+	}
+
+	.navbar ul {
+		display: flex;
+		justify-content: flex-end;
+	}
+
 	.info {
-		flex-direction: column;
-
-		.how-to {
-			flex-basis: 100%;
-
-			.main-titles {
-				flex-basis: 100%;
-				margin: 40px 0 20px;
-
-				&:before {
-					height: 3em;
-				}
-			}
-		}
+		display: flex;
+		align-items: center;
 	}
 }
