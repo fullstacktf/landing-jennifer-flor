@@ -17,6 +17,7 @@
 			"s",
 			"px",
 			"vh",
+			"vw",
 			"%"
 		],
 		"selector-nested-pattern": "^(?!&__|&--|&-|&_).*",
