@@ -200,12 +200,13 @@ li {
 
 .clients-reviews {
 	position: relative;
-	width: 500px;
+	width: 100vw;
 	height: 646px;
+	margin: 0 auto;
 
 	img {
 		display: block;
-		max-width: 500px;
+		width: 100%;
 		border-radius: 2px;
 	}
 
@@ -223,12 +224,10 @@ li {
 
 	.client-name {
 		font-size: 22px;
-		display: inline-block;
+		display: block;
 		font-weight: bold;
+		text-align: right;
 		text-transform: uppercase;
-		position: absolute;
-		right: 0.5em;
-		bottom: 0.5em;
 		color: var(--color-dark);
 	}
 
@@ -237,6 +236,8 @@ li {
 		transition: all 1s;
 		position: absolute;
 		z-index: 0;
+		right: 0;
+		left: 0;
 
 		&.active {
 			opacity: 1;
@@ -429,6 +430,12 @@ li {
 	.step-three {
 		margin: 20px 10px;
 	}
+
+	.clients-reviews {
+		position: relative;
+		width: calc(100vw / 2);
+		height: 600px;
+	}
 }
 
 @media screen and (max-width: 1046px) {
@@ -440,10 +447,6 @@ li {
 
 	.clients-reviews .review-text {
 		right: 0;
-	}
-
-	.clients-reviews {
-		margin-top: 40px;
 	}
 
 	.left {
@@ -492,5 +495,16 @@ li {
 	.navbar ul {
 		display: flex;
 		justify-content: flex-end;
+	}
+
+	.clients-reviews {
+		position: relative;
+		width: calc(100vw / 2);
+		height: 546px;
+
+		.review {
+			right: 15%;
+			left: 15%;
+		}
 	}
 }

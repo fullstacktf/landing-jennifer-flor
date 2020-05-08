@@ -15,16 +15,27 @@ new Typed(locations, {
 
 const reviewClients = Array.from(document.querySelectorAll('.review'));
 const allButtons = Array.from(document.querySelectorAll('.reviews-control > .button'));
+let idReview = 0;
 
 allButtons.forEach((item) => {
-	item.addEventListener('click', nextReview);
+	item.addEventListener('click', clickNextReview);
 });
 
-function nextReview(ev) {
-	allButtons.forEach((item, index) => {
-		item.className = 'button';
-		reviewClients[index].className = 'review';
+setInterval(() => {
+	nextReview(idReview);
+	idReview === 2 ? (idReview = 0) : (idReview += 1);
+}, 5000);
+
+function nextReview(n) {
+	reviewClients.forEach((item, index) => {
+		item.className = 'review';
+		allButtons[index].className = 'button';
 	});
-	ev.target.className = 'button selected';
-	reviewClients[ev.target.id].className = 'review active';
+	reviewClients[n].className = 'review active';
+	allButtons[n].className = 'button selected';
+}
+
+function clickNextReview(ev) {
+	idReview = parseInt(ev.target.id);
+	nextReview(idReview);
 }
