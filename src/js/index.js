@@ -1,6 +1,8 @@
 import Typed from 'typed.js';
 import AOS from 'aos';
-AOS.init();
+AOS.init({
+	once: true,
+});
 
 const locations = document.querySelector('#locations');
 
