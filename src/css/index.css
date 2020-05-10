@@ -68,6 +68,12 @@ li {
 	h1 {
 		font-size: 24px;
 		font-weight: 900;
+		display: inline-block;
+	}
+
+	img {
+		/* display: inline-block; */
+		width: 25px;
 	}
 }
 
@@ -275,17 +281,11 @@ li {
 }
 
 .brand-info {
-	text-align: right;
-	font-size: 20px;
 	flex-basis: 40%;
 	align-self: center;
 
-	p {
-		position: relative;
-		z-index: 1;
-	}
-
 	.main-titles {
+		text-align: right;
 		margin: 0 0 20px;
 		position: relative;
 		z-index: 1;
@@ -304,6 +304,10 @@ li {
 
 	.description {
 		margin: 20px 0;
+		text-align: justify;
+		font-size: 20px;
+		position: relative;
+		z-index: 1;
 	}
 }
 
