@@ -4,11 +4,12 @@
 	"description": "Landing page proyecto Front-End",
 	"main": "src/index.html",
 	"scripts": {
+		"prestart": "copyfiles -u 1 static/* dist",
 		"start": "parcel serve $npm_package_main -d dist",
-		"prebuild": "rm -rf dist build",
+		"prebuild": "rm -rf dist build && copyfiles -u 1 static/* build",
 		"build": "parcel build $npm_package_main -d build --public-url /$npm_package_name/",
 		"postbuild": "gh-pages -d build",
-		"prenetlify": "rm -rf dist build",
+		"prenetlify": "rm -rf dist build && copyfiles -u 1 static/* build",
 		"netlify": "parcel build $npm_package_main -d build --public-url /"
 	},
 	"author": "Jennifer y Flor",
@@ -16,6 +17,7 @@
 	"devDependencies": {
 		"aos": "^3.0.0-beta.6",
 		"autoprefixer": "^9.7.6",
+		"copyfiles": "^2.2.0",
 		"eslint": "^6.8.0",
 		"gh-pages": "^2.2.0",
 		"parcel-bundler": "^1.12.4",

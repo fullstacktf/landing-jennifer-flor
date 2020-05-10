@@ -23,16 +23,18 @@ allButtons.forEach((item) => {
 
 setInterval(() => {
 	nextReview(idReview);
-	idReview === 2 ? (idReview = 0) : (idReview += 1);
+	idReview === reviewClients.length - 1 ? (idReview = 0) : (idReview += 1);
 }, 5000);
 
 function nextReview(n) {
 	reviewClients.forEach((item, index) => {
-		item.className = 'review';
-		allButtons[index].className = 'button';
+		if (index != n) {
+			item.classList.remove('active');
+			allButtons[index].classList.remove('selected');
+		}
 	});
-	reviewClients[n].className = 'review active';
-	allButtons[n].className = 'button selected';
+	reviewClients[n].classList.add('active');
+	allButtons[n].classList.add('selected');
 }
 
 function clickNextReview(ev) {
