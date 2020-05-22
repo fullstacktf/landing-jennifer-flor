@@ -41,3 +41,22 @@ function clickNextReview(ev) {
 	idReview = parseInt(ev.target.id);
 	nextReview(idReview);
 }
+
+const menuOpen = document.querySelector('.menu-icon');
+const menuClose = document.querySelector('.menu-close');
+const navbar = document.querySelector('.navbar');
+
+menuOpen.addEventListener('click', clickOpenMenu);
+menuClose.addEventListener('click', clickCloseMenu);
+
+function clickOpenMenu() {
+	navbar.classList.add('responsive');
+	menuClose.classList.add('responsive');
+	menuOpen.classList.add('responsive');
+}
+
+function clickCloseMenu() {
+	navbar.classList.remove('responsive');
+	menuClose.classList.remove('responsive');
+	menuOpen.classList.remove('responsive');
+}
