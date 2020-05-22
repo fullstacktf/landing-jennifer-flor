@@ -36,7 +36,7 @@
 				<ul>
 					<li><a href="#how-to">Funcionamiento</a></li>
 					<li><a href="#about-us">¿Quiénes somos?</a></li>
-					<li><a href="#">Contacto</a></li>
+					<li><a href="#contact">Contacto</a></li>
 					<li><a class="login" href="https://app.garageme.es/login">Iniciar Sesión</a></li>
 				</ul>
 			</nav>
@@ -145,6 +145,25 @@
 							>¡Regístrate gratis!</a
 						>
 					</div>
+				</div>
+			</section>
+			<section id="contact">
+				<h2 class="main-titles">¿Tienes preguntas? Puedes mandarnos un mensaje</h2>
+				<div class="contact-form">
+					<form name="contact" method="POST" data-netlify="true">
+						<div class="form-section">
+							<input type="text" name="name" placeholder="Nombre" required pattern="^[a-zA-Z0-9\u00C0-\u00FF ]+$" />
+						</div>
+						<div class="form-section">
+							<input type="email" name="email" placeholder="Email" required />
+						</div>
+						<div class="form-section">
+							<textarea name="message" placeholder="Mensaje" required pattern="^[a-zA-Z0-9\u00C0-\u00FF ]+$"></textarea>
+						</div>
+						<div class="form-section">
+							<button type="submit">Enviar mensaje</button>
+						</div>
+					</form>
 				</div>
 			</section>
 		</main>
